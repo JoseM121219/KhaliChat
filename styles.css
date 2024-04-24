@@ -30,10 +30,18 @@ p {
     margin-bottom: 5px;
 }
 
-img {
-    max-height: 50%;
-    max-width: 50%;
+#img1 {
+    max-height: 70%;
+    max-width: 70%;
     align-self: center;
+    padding-bottom: 1%;
+}
+
+#img2 {
+    max-height: 30%;
+    max-width: 30%;
+    align-self: center;
+    padding-bottom: 1%;
 }
 
 .chat-container {
