@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #eb0707dd;
+    height: 100%;
+    font-size: 35px;
+}
+
+p {
+    margin-top: .2rem;
+    margin-bottom: .2rem;
+}
+
+.right {
+    margin-left: auto;
+    background-color: #dcf8c6 !important; /* Un color de fondo diferente para destacar */
+}
+
+.right .message-name {
+    display: none; /* Oculta el nombre en los mensajes enviados por el usuario */
+}
+
+.message-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+img {
+    max-height: 50%;
+    max-width: 50%;
+    align-self: center;
+}
+
+.chat-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.message-input {
+    display: flex;
+}
+
+.message-input input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    background: #ffffffeb;
+    border-radius: 5px;
+}
+
+.message-input button {
+    padding: 10px 20px;
+    background-color: #f75462;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.message-input button:hover {
+    background-color: #df3e4b;
+}
+
+@media (max-width: 680px) {
+    .chat-container {
+        padding: 10px;
+        padding-bottom: 10%;
+    }
+}
+
+.message {
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    width: fit-content;
+    max-width: 90%;
+    overflow-wrap: break-word;
+}
+
+.sent {
+    align-self: flex-end;
+    background-color: #dcf8c6;
+}
+
+.received {
+    align-self: flex-start;
+    background-color: #f0f0f0;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    overflow-y: auto;
+    flex-grow: 1;
+    margin-bottom: 20px;
+    background: #59030294;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+.modal {
+    position: fixed; /* Fija el modal en la pantalla */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Oscurece el fondo */
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    z-index: 1000; /* Asegura que el modal esté sobre otros elementos */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 500px; /* Tamaño máximo del contenido del modal */
+    position: relative; /* Asegura que transform se aplique correctamente */
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.modal-content input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px; /* Espacio entre el input y el botón */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50; /* Color del botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #45a049; /* Color del botón al pasar el mouse */
+}
