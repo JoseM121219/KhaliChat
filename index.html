@@ -6,7 +6,7 @@
     <title>El Khalifato</title>
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-    <link rel="icon" href="ruta_al_favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./logo_khali.jpeg" type="image/x-icon">
 </head>
 <body>
     <!-- Google tag (gtag.js) -->
@@ -18,13 +18,26 @@
 
   gtag('config', 'G-141MXQ8JMT');
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+      const button = document.getElementById('send');
+      const input = document.getElementById('messageBox');
+
+      input.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') {
+              e.preventDefault(); // Prevenir el comportamiento predeterminado
+              button.click(); // Simular un clic en el botón
+          }
+      });
+  });
+</script>
     <div class="chat-container">     
         <img id="img1" src="./cartel_khali.jpeg">  
         <!-- <img id ="img2" src="./logo_khali.jpeg"> -->
         <div class="messages" id="messages"></div>
         <div class="message-input">
             <input type="text" id="messageBox" placeholder="Escribe tu mensaje aqui...">
-            <button id="send" title="Send Message!">Enviar</button>
+            <button id="send" onclick="alert('Botón activado!')" title="Send Message!">Enviar</button>
         </div>
     </div>
     <!-- Agrega un modal o una sección para el nombre del usuario -->
