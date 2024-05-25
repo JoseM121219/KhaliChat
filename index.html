@@ -104,7 +104,12 @@
       ws.onopen = () => {
         console.log('Connection opened!');
       }
-      ws.onmessage = ({ data }) => showMessage(data, false);
+      ws.onmessage = ({ data }) => {
+                const currentMessage = messageBox.value;
+                showMessage(data, false);
+                // Restaurar el contenido del input después de recibir un mensaje
+                messageBox.value = currentMessage;
+            };
       ws.onclose = function() {
         ws = null;
       }
@@ -118,9 +123,13 @@
 
       const originalMessage = messageBox.value;
 
-      if(originalMessage != "" && originalMessage != " "){
-        ws.send(userName + "|" + originalMessage);
-        showMessage(userName + "|" + originalMessage, true);
+      if (originalMessage.trim() !== "") {
+          ws.send(userName + "|" + originalMessage);
+          showMessage(userName + "|" + originalMessage, true);
+          // Limpiar el contenido del input después de enviar el mensaje
+          messageBox.value = '';
+          // Limpiar el contenido guardado en localStorage
+          localStorage.removeItem('messageBoxContent');
       }
     }
 
@@ -132,8 +141,14 @@
 
     // Mostrar el modal al cargar la página para que el usuario ingrese su nombre
     document.addEventListener('DOMContentLoaded', function() {
-        nameModal.style.display = 'block';
-    });
+            // Cargar el contenido guardado en localStorage
+            const savedMessage = localStorage.getItem('messageBoxContent');
+            if (savedMessage) {
+                messageBox.value = savedMessage;
+            }
+
+            nameModal.style.display = 'block';
+        });
     init();
   })();
 </script>
