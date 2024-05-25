@@ -18,8 +18,8 @@
 
   gtag('config', 'G-141MXQ8JMT');
 </script>
-    <div class="chat-container">
-        <img id="img1" src="./cartel_khali.jpeg">
+    <div class="chat-container">     
+        <img id="img1" src="./cartel_khali.jpeg">  
         <!-- <img id ="img2" src="./logo_khali.jpeg"> -->
         <div class="messages" id="messages"></div>
         <div class="message-input">
@@ -97,17 +97,6 @@
       }
     }
 
-    const forbiddenWords = ['puta', 'pene', 'coño', 'chocho', 'xoxo', 'polla', 'mierda', 'marica', 'maricon', 'gilipollas', 'imbecil', 'subnormal', 'cancer', 'zorra', 'guarra', 'guarro', 'cerda', 'cerdo'];
-
-    function filterMessage(message) {
-        let filteredMessage = message;
-        forbiddenWords.forEach(word => {
-            const regex = new RegExp(word, 'gi'); // 'g' para global, 'i' para ignorar mayúsculas/minúsculas
-            filteredMessage = filteredMessage.replace(regex, '****'); // Reemplaza por asteriscos o lo que prefieras
-        });
-        return filteredMessage;
-    }
-
     sendBtn.onclick = function() {
       if (!ws) {
         showMessage("Algo está fallando, recarga la página web :(");
@@ -115,11 +104,10 @@
       }
 
       const originalMessage = messageBox.value;
-      const filteredMessage = filterMessage(originalMessage);
 
-      if(filteredMessage != "" && filteredMessage != " "){
-        ws.send(userName + "|" + filteredMessage);
-        showMessage(userName + "|" + filteredMessage, true);
+      if(originalMessage != "" && originalMessage != " "){
+        ws.send(userName + "|" + originalMessage);
+        showMessage(userName + "|" + originalMessage, true);
       }
     }
 
