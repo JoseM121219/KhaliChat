@@ -65,7 +65,6 @@
 
     let ws;
     let userName = 'Anonymous'; // Nombre por defecto
-    let connectionCount = 0;
 
     function showMessage(message, mineText) {
       const messageParts = message.split('|'); // Separar el mensaje en partes
@@ -107,8 +106,6 @@
       //ws = new WebSocket('ws://localhost:8100');
       ws.onopen = () => {
         console.log('Connection opened!');
-        connectionCount++;
-        console.log(`Connection count: ${connectionCount}`);
       }
       ws.onmessage = ({ data }) => {
                 const currentMessage = messageBox.value;
