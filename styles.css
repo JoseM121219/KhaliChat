@@ -157,7 +157,6 @@ p {
 .centered-image {
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
     text-align: center;
 }
@@ -174,6 +173,7 @@ p {
     justify-content: center; /* Alinea las imágenes en el centro horizontalmente */
     align-items: center; /* Alinea las imágenes en el centro verticalmente */
     gap: 80px; /* Espacio entre las imágenes, ajusta según necesites */
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan en pantallas pequeñas */
 }
 
 #img2, #img3 {
@@ -192,4 +192,26 @@ p {
     display: block;
     margin-top: 10px;
     text-align: center;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    #img1, #img2, #img3 {
+        width: 80%; /* Ajusta el ancho de las imágenes en pantallas pequeñas */
+        margin-bottom: 10px; /* Espacio entre las imágenes en pantallas pequeñas */
+    }
+
+    .message-input {
+        align-items: center;
+    }
+
+    .message-input input {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px; /* Espacio entre el input y el botón en pantallas pequeñas */
+    }
+
+    .message-input button {
+        width: 100%;
+    }
 }
