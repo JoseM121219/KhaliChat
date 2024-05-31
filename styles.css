@@ -33,10 +33,22 @@ p {
 
 #img1 {
     display: inline-block;
-    max-width: 55%; /* La imagen no será más ancha que su contenedor */
+    max-width: 60%; /* La imagen no será más ancha que su contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
-    margin-bottom: 10px;
     align-self: center;
+}
+
+#img2, #img3{
+    max-width: 12%;
+    height: auto;
+    align-self: start;
+}
+
+.imagenes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .chat-container {
