@@ -31,14 +31,6 @@ p {
     margin-bottom: 5px;
 }
 
-#img1 {
-    display: inline-block;
-    max-width: 55%; /* La imagen no será más ancha que su contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    margin-bottom: 10px;
-    align-self: center;
-}
-
 .chat-container {
     max-width: 1200px;
     margin: auto;
@@ -175,4 +167,29 @@ p {
     text-decoration: none;
     align-self: center;
     font-size: large;
+}
+
+.image-row {
+    display: flex;
+    justify-content: center; /* Alinea las imágenes en el centro horizontalmente */
+    align-items: center; /* Alinea las imágenes en el centro verticalmente */
+    gap: 80px; /* Espacio entre las imágenes, ajusta según necesites */
+}
+
+#img2, #img3 {
+    width: 150px; /* Tamaño específico para img2 y img3 */
+    height: auto;
+}
+
+#img1 {
+    display: inline-block;
+    width: 700px;
+    height: auto; /* Mantiene la proporción de la imagen */
+    align-self: center;
+}
+
+.custom-label {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
 }
